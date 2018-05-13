@@ -5,19 +5,31 @@ public class Movie {
     public static final int REGULAR = 0;
     public static final int NEW_RELEASE = 1;
     private final String title;
-    private int priceCode;
+    private Price price;
 
-    public Movie(String title, int priceCode) {
+    public Movie(String title, int newPriceCode) {
         this.title = title;
-        setPriceCode(priceCode);
+        setPriceCode(newPriceCode);
     }
 
     public int getPriceCode() {
-        return priceCode;
+        return price.getPriceCode();
     }
 
     public void setPriceCode(int priceCode) {
-        this.priceCode = priceCode;
+        switch (priceCode) {
+            case REGULAR:
+                price = new RegularPrice();
+                break;
+            case NEW_RELEASE:
+                price = new NewReleasePrice();
+                break;
+            case CHILDREN:
+                price = new ChildrenPrice();
+                break;
+            default:
+                throw new IllegalArgumentException("Not a valid Price Code");
+        }
     }
 
     public String getTitle() {
@@ -28,9 +40,7 @@ public class Movie {
         double result = 0;
         switch (getPriceCode()) {
             case Movie.REGULAR:
-                result += 2;
-                if (daysRenteed > 2)
-                    result += (daysRenteed - 2) * 1.5;
+                price = new
                 break;
             case Movie.NEW_RELEASE:
                 result += daysRenteed * 3;
