@@ -1,6 +1,3 @@
-package test;
-
-
 import main.Movie;
 import org.junit.Test;
 

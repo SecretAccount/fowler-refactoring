@@ -1,6 +1,6 @@
-package test;
-
+import main.Customer;
 import main.Movie;
+import main.Rental;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
