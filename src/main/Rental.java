@@ -18,7 +18,7 @@ class Rental {
     }
 
     double getCharge() {
-        return getMovie().getCharge(getDaysRented());
+        return getMovie().getPrice().getCharge(getDaysRented());
     }
 
     int getFrequentRenterPoints() {

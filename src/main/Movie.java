@@ -12,8 +12,8 @@ public class Movie {
         setPriceCode(newPriceCode);
     }
 
-    public int getPriceCode() {
-        return price.getPriceCode();
+    public Price getPrice() {
+        return price;
     }
 
     public void setPriceCode(int priceCode) {
@@ -36,26 +36,8 @@ public class Movie {
         return title;
     }
 
-    double getCharge(int daysRenteed) {
-        double result = 0;
-        switch (getPriceCode()) {
-            case Movie.REGULAR:
-                price = new
-                break;
-            case Movie.NEW_RELEASE:
-                result += daysRenteed * 3;
-                break;
-            case Movie.CHILDREN:
-                result += 1.5;
-                if (daysRenteed > 3)
-                    result += (daysRenteed - 3) * 1.5;
-                break;
-        }
-        return result;
-    }
-
     int getFrequentRenterPoints(int daysRented) {
-        if ((getPriceCode() == Movie.NEW_RELEASE) && daysRented > 1) {
+        if ((price.getPriceCode() == Movie.NEW_RELEASE) && daysRented > 1) {
             return 2;
         } else {
             return 1;

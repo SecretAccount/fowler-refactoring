@@ -22,7 +22,7 @@ public class MovieTest {
 
         for (int priceCode : priceCodes) {
             Movie movie = new Movie("", priceCode);
-            assertEquals(priceCode, movie.getPriceCode());
+            assertEquals(priceCode, movie.getPrice().getPriceCode());
         }
     }
 
@@ -34,7 +34,7 @@ public class MovieTest {
 
         for (int priceCode : priceCodes) {
             movie.setPriceCode(priceCode);
-            assertEquals(priceCode, movie.getPriceCode());
+            assertEquals(priceCode, movie.getPrice().getPriceCode());
         }
     }
 
