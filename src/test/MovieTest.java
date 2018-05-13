@@ -10,7 +10,7 @@ public class MovieTest {
 
     @Test
     public void testMovieConstructorTitle() {
-        String movieName = "Schulzeit Squad";
+        String movieName = "Schooltime Squad";
         Movie movie = new Movie(movieName, Movie.NEW_RELEASE);
 
         assertEquals(movie.getTitle(), movieName);
@@ -18,7 +18,7 @@ public class MovieTest {
 
     @Test
     public void testMovieConstructorPrice() {
-        int[] priceCodes = {Movie.REGULAR, Movie.NEW_RELEASE, Movie.CHILDRENS};
+        int[] priceCodes = {Movie.REGULAR, Movie.NEW_RELEASE, Movie.CHILDREN};
 
         for (int priceCode : priceCodes) {
             Movie movie = new Movie("", priceCode);
@@ -28,7 +28,7 @@ public class MovieTest {
 
     @Test
     public void testSetMoviePrice() {
-        int[] priceCodes = {Movie.REGULAR, Movie.NEW_RELEASE, Movie.CHILDRENS};
+        int[] priceCodes = {Movie.REGULAR, Movie.NEW_RELEASE, Movie.CHILDREN};
 
         Movie movie = new Movie("", Movie.REGULAR);
 
